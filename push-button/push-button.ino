@@ -14,6 +14,7 @@ void loop() {
   input = digitalRead(BUTTON);
   if (input == HIGH && previousInput == LOW) {
     state = 1 - state;
+    delay(10);
   }
   previousInput = input;
   digitalWrite(LED, state);
