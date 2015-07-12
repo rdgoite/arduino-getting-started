@@ -12,7 +12,8 @@ void setup() {
 
 void loop() {
   input = digitalRead(BUTTON);
-  if (input == HIGH && previousInput == LOW) {
+  //push button goes from low to high
+  if (previousInput == LOW && input == HIGH) {
     state = 1 - state;
     delay(10);
   }
