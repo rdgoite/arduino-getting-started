@@ -12,11 +12,13 @@ void setup() {
 
 void loop() {
   input = digitalRead(BUTTON);
-  //push button goes from low to high
-  if (previousInput == LOW && input == HIGH) {
+  if (previousInput == LOW && input == HIGH) { //push button goes from low to high
     state = 1 - state;
     delay(10);
   }
   previousInput = input;
   digitalWrite(LED, state);
+  if (previousInput == HIGH && input == LOW) { //push button goes from high to low
+    delay(10);
+  }
 }
