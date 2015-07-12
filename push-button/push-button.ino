@@ -1,7 +1,8 @@
 const int LED = 13;
 const int BUTTON = 7;
 
-int input = 0;
+int input = LOW;
+int state = input;
 
 void setup() {
   pinMode(LED, OUTPUT);
@@ -10,5 +11,8 @@ void setup() {
 
 void loop() {
   input = digitalRead(BUTTON);
-  digitalWrite(LED, input);
+  if (input == HIGH) {
+    state = 1 - state;
+  }
+  digitalWrite(LED, state);
 }
