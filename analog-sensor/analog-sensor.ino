@@ -1,4 +1,6 @@
-const int LED = 13;
+const int LED = 9;
+
+const int DELAY = 10;
 
 int input = 0;
 
@@ -9,8 +11,6 @@ void setup() {
 
 void loop() {
   input = analogRead(0);
-  digitalWrite(LED, HIGH);
-  delay(input);
-  digitalWrite(LED, LOW);
-  delay(input);
+  analogWrite(LED, input/4);
+  delay(DELAY);
 }
